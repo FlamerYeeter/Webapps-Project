@@ -1,0 +1,6 @@
+Project Members:
+- Jerine Diaz (Frontend)
+- Nicole Candelaria (Frontend)
+- Adam Jay Balona (Database)
+- James Castro (Backend)
+- Thomas Naguit (Backend)
