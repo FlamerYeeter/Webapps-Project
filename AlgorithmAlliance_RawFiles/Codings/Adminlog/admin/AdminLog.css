@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    color: white;
+    /* overflow-x: hidden; */
+    font-family: 'Times New Roman', Times, serif;
+    scroll-behavior: smooth;
+    position: relative;
+}
+
+.container{
+    max-width: 100%;
+    min-height: 100vh;
+    background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.219),rgba(233, 233, 233, 0.219)),
+    url(/adminlogbg.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding-top: 30px;
+}
+
+.outerline {
+    width: 32%;
+    min-height: 80%;
+    background-color: rgba(253, 253, 253, 0.689);
+    position: absolute;
+    top: 10%;
+    left: 31%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+}
+
+.admin{
+    
+    padding-right: 80%;
+    font-size: 20px;
+    color: black;
+}
+
+.login-box {
+    width: 95%;
+    min-height: 470px;
+    padding: 0px 20px;
+  color: white;
+  text-align: center;
+  border: 1px solid black;
+  margin-top: 5px;
+ 
+}
+
+.login-box h2 {
+  margin-top: 0%;
+  margin-bottom: 5%;
+  font-size: 35px;
+  color: black;
+  font-weight: lighter;
+}
+
+.login-box img {
+  width: 90px;
+  border-radius: 50%;
+  margin-bottom: 3px;
+  margin-top: 20px;
+}
+
+.email, .pass {
+  display: block;
+  text-align: left;
+  color: black;
+}
+.login-box input[type="email"],
+.login-box input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 30px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+}
+.login-box input[type="email"]:focus,
+.login-box input[type="password"]:focus  {
+    border-bottom: 1px solid black;
+    width: 100%;
+    outline: none;
+}
+
+
+  .login-box button {
+    width: 40%;
+    padding: 10px;
+    background-color: #0097b2;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-decoration: none;
+  }
+
+  .login-box button:hover {
+    background-color: white;
+    color: #0097b2;
+    border: 1px solid #0097b2;
+  }
+  .loginlink{
+    text-decoration: none;
+    color: white;
+    width: 40%;
+    padding: 20px 40px;
+  }
+.loginlink:hover{
+  color: #0097b2;
+}
+
+
+
+.Forgot a {
+    text-align: center;
+    margin-top: 5px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .Forgot a:hover {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  

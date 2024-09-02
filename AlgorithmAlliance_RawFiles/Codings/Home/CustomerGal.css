@@ -1,0 +1,168 @@
+.CustomerGal{
+    min-height: 100vh;
+    max-width: 100%;
+    background-image: url(/con3.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding: 30px;
+    color: #2b1511;
+}
+.CGAL, .Ccarousel, .Vbutton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titleCGAL{
+    font-size: 40px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    /* background-color: aquamarine; */
+    width: 100%;
+    justify-content: center;
+    }
+.cgal {
+text-align: center;
+/* margin-left: 50%;
+transform: translate(-50% , -50%); */
+}
+
+
+.Ccarousel .customerCarousel{
+  white-space: nowrap;
+  cursor: pointer;
+  overflow: hidden; 
+  scroll-behavior: smooth;
+}
+
+.customerCarousel.dragging {
+  scroll-behavior: auto;
+  cursor: grab;
+}
+
+.customerCarousel.dragging img {
+  pointer-events: none;
+}
+
+.Ccarousel{
+    height: 325px;
+    /* background-color: blue; */
+    max-width: 70%;
+    /* width: 500px; */
+    /* margin: 0 auto;*/
+}
+  
+.Ccarousel .customerCarousel img {
+  height: 300px;
+  object-fit: cover;
+  width: calc(100% / 3);
+  margin-left: 10px;
+}
+
+  .Ccarousel .customerCarousel img:first-child {
+    margin-left: 0;
+  }
+
+  .Ccarousel .ArrowLeft img,
+.Ccarousel .ArrowRight img {
+  top: 40%;
+  position: absolute;
+  width: 3%;
+  transform: translateY(80%);
+
+}
+
+.Ccarousel .ArrowLeft img {
+  left: 10%;
+}
+
+.Ccarousel .ArrowRight img {
+  right: 10%;
+}
+
+
+  
+.Vbutton {
+/* background-color: black; */
+height: 50px;
+width: 100%;
+display: flex;
+justify-content: center;
+margin-bottom: 20px;
+}
+.vbutton {
+    padding: 5px 15px;
+    font-size: 18px;
+    background-color: transparent;
+    border: 1px solid #2b1511;
+    font-family: serif;
+    /* color: aqua; */
+    
+}
+.vbutton:hover{
+  color: white;
+  border: 1px solid black;
+  background-color: #8b6c5c;
+}
+.AF {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .LeftA {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: aqua; */
+    padding: 20px;
+    margin-left: 6%;
+  }
+  
+  .RightF {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: rgb(0, 83, 83); */
+    padding: 20px;
+    margin-right: 5%;
+  }
+  
+  .Th {
+    font-size: 40px;
+    /* background-color: aquamarine; */
+    padding: 6px;
+  }
+  
+  .THeader {
+    text-align: center;
+  }
+  
+  .colspan {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .Acolumn, .Fcolumn{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    padding: 25px;
+    padding-bottom: 10px;
+  }
+  .row1, .row2 {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: left;
+    padding: 0px 30px;
+    font-size: 20px;
+  }
+  

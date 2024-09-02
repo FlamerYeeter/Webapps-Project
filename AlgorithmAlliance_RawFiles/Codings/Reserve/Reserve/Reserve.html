@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="urban_oasis_resort_transparent.png">
+    <title>Reservation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
+    <link rel="stylesheet" href="reserve.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script src="jsscript.js"></script>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="nav-bar">
+          <ul class="menu">
+            <li><a href="Gallery.html">Gallery</a></li>
+            <li><a href="About Us.html">About Us</a></li>
+            <li><a href="Home.html">Home</a></li>
+            <li class="logo-item"><a href="#"><img src="urban_oasis_resort_transparent.png" alt="Logo"></a></li>
+            <li><a href="Review.html">Reviews</a></li>
+            <li><a href="Rooms.html">Rooms</a></li>
+            <li><a href="Reserve.html">Reserve</a></li>
+          </ul>
+        </div>
+        <h1 class="title_p">Select Your Dates Now!</h1>
+    </header>
+
+    <div class="reminder-container">
+        <p class="reminder">
+          For personalized consultations on room types and availability and family offers, please contact urbanoasistarlac@gmail.com or call us on 0956 815 5257.
+        </p>
+      </div>
+      
+    <div class="container">
+        <div class="calendar-container">
+          <div id="calendar"></div>
+        </div>
+        
+        <div class="reservation-container">
+          <form class="reservation-form" action="Reserve.php" method="post">
+            <h2>Make a Reservation</h2>
+            <div class="form-row">
+              <label for="check-in">Check-in Date:</label>
+              <input type="text" id="check-in" name="check-in" readonly>
+            </div>
+            <div class="form-row">
+              <label for="check-out">Check-out Date:</label>
+              <input type="text" id="check-out" name="check-out" readonly>
+            </div>
+            <div class="form-row">
+              <div id="stay-info">
+                <label>Number of Stays:</label>
+                <span id="num-stays">0</span>
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="room">Room:</label>
+              <select id="room" name="room">
+                <option value="">Select a room</option>
+                <option value="double-room">Double Room with Private Room (₱2,000)</option>
+                <option value="deluxe-standard">Deluxe Standard Bedroom (₱2,500)</option>
+                <option value="deluxe-pool">Deluxe with Pool View (₱3,000)</option>
+                <option value="deluxe-quadruple">Deluxe Quadruple Room with Balcony (₱3,500)</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="adults">Adults:</label>
+              <input type="number" id="adults" name="adults" min="1" placeholder="Enter number of adults">
+            </div>
+            <div class="form-row">
+              <label for="children">Children:</label>
+              <input type="number" id="children" name="children" min="1" placeholder="Enter number of children">
+            </div>
+            <div class="form-row">
+              <label for="promo">Promo Code:</label>
+              <input type="text" id="promo" name="promo">
+            </div>
+            <hr>
+            <h3 class="optional">This section is optional.</h3>
+            <div class="form-row">
+              <label for="others">Cottages:</label>
+              <select id="others" name="others">
+                <option value=""></option>
+                <option value="cabana-half">Cabana Half (8 pax, ₱400)</option>
+                <option value="cabana-whole">Cabana Whole (16pax, ₱700)</option>
+              </select>                
+            </div>
+            <div class="form-row">
+              <label for="visit-time">Visit Time:</label>
+              <select id="visit-time" name="visit-time">
+                <option value=""></option>
+                <option value="day-visit">Day Visit</option>
+                <option value="night-visit">Night Visit</option>
+              </select>                
+            </div>
+            <div class="form-row">
+              <label for="others-adults">Adults:</label>
+              <input type="number" id="others-adults" name="others-adults" min="1" placeholder="Enter number of adults">
+            </div>
+            <div class="form-row">
+              <label for="others-children">Children:</label>
+              <input type="number" id="others-children" name="others-children" min="1" placeholder="Enter number of children">
+            </div>
+          </form>
+        </div>        
+      
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-color available"></div>
+            <span class="legend-text">Available</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color reserved"></div>
+            <span class="legend-text">Fully Booked</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row custom-buttons">
+        <button id="submit-btn">Submit</button>
+        <button id="clear-btn">Clear</button>
+      </div>      
+
+      <script>
+$(document).ready(function() {
+  // Hide the selected-adults, selected-children, others-adults, and others-children fields by default
+  $("#selected-adults").hide();
+  $("#selected-children").hide();
+  $("#others-adults").hide();
+  $("#others-children").hide();
+
+  $("#visit-time").change(function() {
+    var selectedVisitTime = $("#visit-time option:selected").val();
+
+    if (selectedVisitTime === "day-visit" || selectedVisitTime === "night-visit") {
+      $("#selected-adults").attr("required", true).show();
+      $("#selected-children").attr("required", true).show();
+      $("#others-adults").attr("required", true).show();
+      $("#others-children").attr("required", true).show();
+    } else {
+      $("#selected-adults").removeAttr("required").hide();
+      $("#selected-children").removeAttr("required").hide();
+      $("#others-adults").removeAttr("required").hide();
+      $("#others-children").removeAttr("required").hide();
+    }
+  });
+
+  var reservationDetails = {};
+
+  $("#submit-btn").click(function() {
+    var selectedRoom = $("#room option:selected").val();
+    var selectedOther = $("#others option:selected").val();
+    var enteredAdults = $("#adults").val();
+    var enteredChildren = $("#children").val();
+    var selectedVisitTime = $("#visit-time option:selected").val();
+    var visitAdults = $("#others-adults").val();
+    var visitChildren = $("#others-children").val();
+    var enteredPromo = $("#promo").val();
+    var startDate = $("#check-in").val();
+    var endDate = $("#check-out").val();
+
+    reservationDetails.roomName = selectedRoom;
+    reservationDetails.otherName = selectedOther;
+    reservationDetails.adults = enteredAdults;
+    reservationDetails.children = enteredChildren;
+    reservationDetails.visitTime = selectedVisitTime;
+    reservationDetails.visitAdults = visitAdults;
+    reservationDetails.visitChildren = visitChildren;
+    reservationDetails.promoCode = enteredPromo;
+    reservationDetails.startDate = startDate;
+    reservationDetails.endDate = endDate;
+    reservationDetails.otherAdults = $("#others-adults").val();
+    reservationDetails.otherChildren = $("#others-children").val();
+
+    if (
+      selectedRoom === "" ||
+      startDate === "" ||
+      endDate === ""
+    ) {
+      alert("Please fill in all the fields.");
+      return;
+    }
+
+    var roomCosts = {
+      "double-room": 2000,
+      "deluxe-standard": 2500,
+      "deluxe-pool": 3000,
+      "deluxe-quadruple": 3500,
+    };
+
+    var otherCosts = {
+      "cabana-half": { fixedPrice: 400, maxCapacity: 8 },
+      "cabana-whole": { fixedPrice: 700, maxCapacity: 16 },
+    };
+
+    var guestCosts = {
+      "day-visit": { adults: 120, children: 80 },
+      "night-visit": { adults: 150, children: 100 },
+      "day-stay": { adults: 600, children: 600 },
+    };
+
+    var roomCost = roomCosts[selectedRoom];
+    var adultsCost = parseInt(enteredAdults) * 100;
+    var childrenCost = parseInt(enteredChildren) * 80;
+    var visitAdultsCost = parseInt(visitAdults) * 100;
+    var visitChildrenCost = parseInt(visitChildren) * 80;
+
+    var guestCost = adultsCost + childrenCost + visitAdultsCost + visitChildrenCost;
+
+    var guestCostPromise = new Promise(function(resolve, reject) {
+      if (selectedOther === "day-visit" || selectedOther === "night-visit") {
+        var adults = parseInt(visitAdults);
+        var children = parseInt(visitChildren);
+        var totalCost =
+          adults * guestCosts[selectedOther]["adults"] +
+          children * guestCosts[selectedOther]["children"];
+        resolve(totalCost);
+      } else if (selectedOther === "day-stay") {
+        var adults = parseInt(visitAdults);
+        var children = parseInt(visitChildren);
+        var totalCost =
+          adults * guestCosts[selectedOther]["adults"] +
+          children * guestCosts[selectedOther]["children"];
+        resolve(totalCost);
+      } else {
+        resolve(0);
+      }
+    });
+
+    guestCostPromise.then(function(additionalCost) {
+      guestCost += additionalCost;
+      var totalCost = roomCost + guestCost;
+
+      reservationDetails.roomCost = roomCost;
+      reservationDetails.guestCost = guestCost;
+      reservationDetails.totalCost = totalCost;
+
+      $("#room-cost").text("₱" + roomCost);
+      $("#guest-cost").text("₱" + guestCost);
+      $("#overall-cost").text("₱" + totalCost);
+
+      // Update inclusions based on selected room
+      if (selectedRoom === "double-room") {
+        reservationDetails.inclusions =
+          "1 double bed and 2 futons. Has a garden view, balcony/terrace, shower, kitchenette. Free breakfast for 2, parking space, free WiFi";
+      } else if (selectedRoom === "deluxe-standard") {
+        reservationDetails.inclusions =
+          "1 double bed and sofa bed. Has a garden view, balcony/terrace, shower, kitchenette. Free breakfast for 2, parking space, welcome drink (coffee or tea), free WiFi, drinking water";
+      } else if (selectedRoom === "deluxe-pool") {
+        reservationDetails.inclusions =
+          "2 queen-sized beds. Has a pool view, balcony/terrace, separate shower/bathtub, shared bathroom, access to private pool, kitchenette. Free breakfast for 2, parking space, welcome drink (coffee or tea), free WiFi, drinking water";
+      } else if (selectedRoom === "deluxe-quadruple") {
+        reservationDetails.inclusions =
+          "4 bunk beds. Has a pool view, balcony/terrace, separate shower/bathtub, shared bathroom, access to private pool, kitchenette. Free breakfast for 2, parking space, welcome drink (coffee or tea), free WiFi, drinking water";
+      } else {
+        reservationDetails.inclusions = "Free WiFi, Toiletries, Water Bottles, Parking Space";
+      }
+
+      sessionStorage.setItem("reservation", JSON.stringify(reservationDetails));
+
+      window.location.href = "process_form.html";
+    });
+  });
+});
+
+    function getNumStays(startDate, endDate) {
+      var start = moment(startDate, "YYYY-MM-DD");
+      var end = moment(endDate, "YYYY-MM-DD");
+      return end.diff(start, "days");
+    }
+  </script>
+</body>
+</html>

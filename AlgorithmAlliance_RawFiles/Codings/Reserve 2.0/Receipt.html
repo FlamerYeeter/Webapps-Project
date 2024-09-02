@@ -1,0 +1,369 @@
+Receipt.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="urban_oasis_resort_transparent.png">
+    <title>Receipt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
+    <link rel="stylesheet" href="reserve.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+    <script src="jsscript.js"></script>
+</head>
+<body>
+    <h2><img src="urban_oasis_resort_transparent.png" alt="Urban Oasis Resort Logo" class="icon">Urban Oasis Resort</h2>
+    <!--
+    <div class="container_box">
+      <div class="box">
+        <p>Contact Number: +63 998-251-6954</p>
+        <img src="qr_code.jpg" alt="QR Code">
+      </div>
+    </div>    
+  -->
+  <div class="container-receipt">
+    <h1>Reservation Receipt</h1>
+    <div class="reservation-details">
+      <h2>Reservation Details</h2>
+      <div class="receipt-content">
+      <div class="table-container">
+        <form id="receipt-form">
+          <div>
+            <label for="complete-name">Name:</label>
+            <div id="complete-name" class="value"></div>
+          </div>
+          <div>
+            <label for="gender">Gender:</label>
+            <div id="gender" class="value"></div>
+          </div>
+          <div>
+            <label for="address">Address:</label>
+            <div id="address" class="value"></div>
+          </div>
+          <div>
+            <label for="email-address">Email Address:</label>
+            <div id="email-address" class="value"></div>
+          </div>
+          <div>
+            <label for="contact-number">Contact Number:</label>
+            <div id="contact-number" class="value"></div>
+          </div>
+          <div>
+            <label for="booking-date">Date Booked:</label>
+            <div id="booking-date" class="value"></div>
+          </div>
+          <div>
+            <label for="booking-time">Time Booked:</label>
+            <div id="booking-time" class="value"></div>
+          </div>
+          <div>
+            <label for="gcash-reference">GCash Transaction Reference:</label>
+            <div id="gcash-reference" class="value"></div>
+          </div>
+          <div>
+            <label for="start-date">Start Date:</label>
+            <div id="start-date" class="value"></div>
+          </div>
+          <div>
+            <label for="end-date">End Date:</label>
+            <div id="end-date" class="value"></div>
+          </div>
+          <div>
+            <label for="number-of-days">Number of Days:</label>
+            <div id="number-of-days" class="value"></div>
+          </div>
+          <div>
+            <label for="stay-price">Stay Price:</label>
+            <div id="stay-price" class="value"></div>
+          </div>
+          <div>
+            <label for="selected-room">Room:</label>
+            <div id="selected-room" class="value"></div>
+          </div>
+          <div>
+            <label for="room-cost">Room Cost:</label>
+            <div id="room-cost" class="value"></div>
+          </div>
+          <div>
+            <label for="adults">Adults:</label>
+            <div id="adults" class="value"></div>
+          </div>
+          <div>
+            <label for="adults-price">Adults Price:</label>
+            <div id="adults-price" class="value"></div>
+          </div>
+          <div>
+            <label for="children">Children:</label>
+            <div id="children" class="value"></div>
+          </div>
+          <div>
+            <label for="children-price">Children Price:</label>
+            <div id="children-price" class="value"></div>
+          </div>
+          <!--
+          <div id="others-row">
+            <label for="selected-others">Cottage:</label>
+            <div id="selected-others" class="value"></div>
+          </div>
+          <div>
+            <label for="others-price">Cottage Price:</label>
+            <div id="others-price" class="value"></div>
+          </div>
+          <div id="visit-time">
+            <label for="selected-visit-time">Visit Time:</label>
+            <div id="selected-visit-time" class="value"></div>
+          </div>
+          <div id="visit-adults-row">
+            <label for="visit-adults">Visit-Adults:</label>
+            <div id="visit-adults" class="value"></div>
+          </div>
+          <div>
+            <label for="visit-adults-price">Visit-Adults Price:</label>
+            <div id="visit-adults-price" class="value"></div>
+          </div>
+          <div id="visit-children-row">
+            <label for="visit-children">Visit-Children:</label>
+            <div id="visit-children" class="value"></div>
+          </div>
+          <div>
+            <label for="visit-children-price">Visit-Children Price:</label>
+            <div id="visit-children-price" class="value"></div>
+          </div>
+          -->
+          <div>
+            <label for="promo-code">Promo Code:</label>
+            <div id="promo-code" class="value"></div>
+          </div>
+          <div>
+            <label for="amount-paid">Amount Paid:</label>
+            <div id="amount-paid" class="value"></div>
+          </div>
+          <div>
+            <label for="total-cost">Total Cost:</label>
+            <div id="total-cost" class="value"></div>
+          </div>
+          <div>
+            <label for="inclusions">Inclusions:</label>
+            <div id="inclusions" class="value"></div>
+          </div>
+        </form>          
+      </div>
+    </div>
+  </div>
+</div>
+
+      <div class="button-container">
+        <button id="submit-btn">Submit</button>
+        <a href="reserve.html" class="btn">Make Another Reservation</a>
+        <a href="process_form.html" class="back-btn">Back</a>
+        <button id="save-image-btn">Save Receipt</button>
+      </div>
+
+<script>
+$(document).ready(function() {
+  var reservation = JSON.parse(sessionStorage.getItem('reservation'));
+
+  function getRoomName(room) {
+    var roomNames = {
+      "double-room": "Double Room with Private Room",
+      "deluxe-standard": "Deluxe Standard Bedroom",
+      "deluxe-pool": "Deluxe with Pool View",
+      "deluxe-quadruple": "Deluxe Quadruple Room with Balcony",
+    };
+
+    return roomNames[room];
+  }
+
+  function getOthersName(others) {
+    var othersNames = {
+      "cabana-half": "Cabana Half",
+      "cabana-whole": "Cabana Whole",
+    };
+
+    return othersNames[others];
+  }
+
+  function getVisitTime(visitTime) {
+    var visitTimeNames = {
+      "day-visit": "Day Visit",
+      "night-visit": "Night Visit"
+    };
+
+    return visitTimeNames[visitTime];
+  }
+
+  function formatDate(date) {
+    var options = { year: 'numeric', month: 'short', day: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+  }
+
+  function calculateStayPrice(startDate, endDate) {
+    var numberOfDays = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
+    var stayPrice = 600 * numberOfDays;
+    return stayPrice;
+  }
+
+  function calculateVisitAdultPrice(visitTime) {
+    var visitAdultPrices = {
+      "day-visit": 120,
+      "night-visit": 150
+    };
+
+    return visitAdultPrices[visitTime];
+  }
+
+  function calculateVisitChildrenPrice(visitTime) {
+    var visitChildrenPrices = {
+      "day-visit": 80,
+      "night-visit": 100
+    };
+
+    return visitChildrenPrices[visitTime];
+  }
+
+  if (reservation) {
+    var startDate = new Date(reservation.startDate);
+    var endDate = new Date(reservation.endDate);
+    var numberOfDays = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
+
+    $("#start-date").text(formatDate(startDate));
+    $("#end-date").text(formatDate(endDate));
+    $("#number-of-days").text(numberOfDays);
+    $("#selected-room").text(getRoomName(reservation.roomName));
+    $("#adults").text(reservation.adults);
+    $("#children").text(reservation.children);
+    $("#selected-others").text(getOthersName(reservation.otherName));
+
+    var stayPrice = calculateStayPrice(startDate, endDate);
+    $("#stay-price").text("₱" + stayPrice.toLocaleString());
+
+    var othersPrice = 0;
+    if (reservation.otherName === "cabana-half") {
+      othersPrice = 400;
+    } else if (reservation.otherName === "cabana-whole") {
+      othersPrice = 700;
+    }
+    $("#others-price").text("₱" + othersPrice.toLocaleString());
+
+    var visitAdultsPrice = calculateVisitAdultPrice(reservation.visitTime);
+    var visitChildrenPrice = calculateVisitChildrenPrice(reservation.visitTime);
+    var totalVisitAdultsPrice = visitAdultsPrice * reservation.visitAdults;
+    var totalVisitChildrenPrice = visitChildrenPrice * reservation.visitChildren;
+    $("#visit-adults-price").text("₱" + totalVisitAdultsPrice.toLocaleString());
+    $("#visit-children-price").text("₱" + totalVisitChildrenPrice.toLocaleString());
+
+    var roomPrices = {
+      "double-room": 2000,
+      "deluxe-standard": 2500,
+      "deluxe-pool": 3000,
+      "deluxe-quadruple": 3500
+    };
+
+    var roomCost = roomPrices[reservation.roomName];
+    $("#room-cost").text("₱" + roomCost.toLocaleString());
+
+    var adultPrice = reservation.adults * 100;
+    var childrenPrice = reservation.children * 80;
+    $("#adults-price").text("₱" + adultPrice.toLocaleString());
+    $("#children-price").text("₱" + childrenPrice.toLocaleString());
+
+ var totalCost = stayPrice + roomCost + adultPrice + childrenPrice;
+
+  if (othersPrice) {
+    totalCost += othersPrice;
+  }
+
+  if (totalVisitAdultsPrice) {
+    totalCost += totalVisitAdultsPrice;
+  }
+
+  if (totalVisitChildrenPrice) {
+    totalCost += totalVisitChildrenPrice;
+  }
+
+  $("#total-cost").text("₱" + totalCost.toLocaleString());
+
+    var totalPaid = totalVisitAdultsPrice + totalVisitChildrenPrice + roomCost;
+    var amountPaid = parseFloat(sessionStorage.getItem('amountPaid'));
+
+	  var name = sessionStorage.getItem('name');
+	  var gender = sessionStorage.getItem('gender');
+	  var address = sessionStorage.getItem('address');
+	  var emailAddress = sessionStorage.getItem('emailAddress');
+	  var contactNumber = sessionStorage.getItem('contactNumber');
+	  var bookingDate = sessionStorage.getItem('bookingDate');
+	  var bookingTime = sessionStorage.getItem('bookingTime');
+	  var amountPaid = parseFloat(sessionStorage.getItem('amountPaid'));
+	  var gcashReference = sessionStorage.getItem('gcashReference');
+
+	  $('#complete-name').text(name);
+	  $('#gender').text(gender);
+	  $('#address').text(address);
+	  $('#email-address').text(emailAddress);
+	  $('#contact-number').text(contactNumber);
+	  $('#booking-date').text(bookingDate);
+	  $('#booking-time').text(bookingTime);
+	  $('#amount-paid').text("₱" + amountPaid.toLocaleString());
+	  $('#gcash-reference').text(gcashReference);
+
+    $("#selected-visit-time").text(getVisitTime(reservation.visitTime));
+    $("#visit-adults").text(reservation.visitAdults);
+    $("#visit-children").text(reservation.visitChildren);
+
+    $("#visit-adults-price").text(reservation.AdultsPrice ? getAdultsPrice(reservation.AdultsPrice) : "-");
+    $("#visit-children-price").text(reservation.ChildrenPrice ? getChildrenPrice(reservation.ChildrenPrice) : "-");
+    $("#selected-others").text(reservation.SelectedOthers ? getSelectedOthers(reservation.SelectedOthers) : "-");
+    $("#others-price").text(reservation.OthersPrice ? getOthersPrice(reservation.OthersPrice) : "-");
+    $("#selected-visit-time").text(reservation.visitTime ? getVisitTime(reservation.visitTime) : "-");
+    $("#visit-adults").text(reservation.visitAdults ? reservation.visitAdults : "-");
+    $("#visit-children").text(reservation.visitChildren ? reservation.visitChildren : "-");
+    $("#inclusions").text(reservation.inclusions || "-");
+    $("#promo-code").text(reservation.promoCode || "-");
+
+  } else {
+    $(".reservation-details").html("<p>No reservation details found.</p>");
+  }
+
+  sessionStorage.removeItem('reservation');
+});
+
+
+function saveAsImage() {
+  // Store references to the buttons
+  var saveImageButton = document.getElementById("save-image-btn");
+  var printButton = document.getElementById("print-btn");
+
+  // Trigger the print dialog
+  window.print();
+
+  // Show the buttons again after a short delay
+  setTimeout(function () {
+    saveImageButton.style.display = "block";
+    printButton.style.display = "block";
+  }, 1000);
+}
+
+  // Button click event for "Save Image" button
+  $("#save-image-btn").click(function () {
+    saveAsImage();
+    alert("Receipt saved successfully!");
+  });
+
+  $("#submit-btn").click(function(event) {
+    event.preventDefault(); // Prevent form from submitting
+
+    // Display alert message
+    alert('Booking Reservation submitted successfully!');
+
+    // Reset the form
+    $("#receipt-form")[0].reset();
+  });
+  </script>     
+</body>
+</html>

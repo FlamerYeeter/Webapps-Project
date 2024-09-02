@@ -1,0 +1,224 @@
+.footer {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    background-image: url(/footer.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding-top: 10px; */
+    flex-direction: column;
+  }
+  
+  
+  .footer a {
+    color: white;
+  }
+  
+  .footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .main{
+  display: flex;
+    justify-content: space-between;
+   object-fit: contain;
+    width: 90%;
+    margin-top: -90px;
+  }
+  .list-item{
+  display: flex;
+  }
+  #list1{
+  margin-right: 10%;
+  }
+  #list2{
+  padding-left: 0;
+  }
+  .list {
+    width: 250%;
+    font-size: 18px; /* Decrease the font size */
+    color: var(--bg-color);
+    margin-bottom: 30px;
+    position: relative;
+    color: white;
+    font-family: serif;
+    padding-left: 5%;
+  }
+  
+  .list h4 {
+    font-size: 20px; /* Set the font size for the headings */
+    margin-bottom: 20px;
+  }
+  
+  .info-text {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16px; /* Decrease the font size */
+    /* margin-left: 10%; */
+  
+    
+  }
+  
+  .end-text {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    transform: translateX(-165%);
+    padding-top: 80px;
+    color: white;
+    font-family: serif;
+    font-size: 16px; /* Decrease the font size */
+    margin-left: -30%;
+    padding-bottom: 10%;
+  }
+  
+  
+  .list ul {
+    list-style-type: none;
+  }
+  
+  .footer-logo {
+  width: 40px; /* Adjust the width as needed */
+  height: 40px; /* Adjust the height as needed */
+  margin-right: 10px; /* Add some spacing between the logo and text */
+  }
+  
+  .footer-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  margin-bottom: 5%;
+  }
+  #Ricon{
+  margin-right: 5%;
+  margin-top: 10px;
+  }
+  #Ricon:hover{
+    color: rgb(0, 0, 0);
+  }
+  .TAP  li a {
+  text-decoration: none;
+  }
+
+  .TAP  li a:hover {
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+  }
+  
+  
+  .end-text {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    transform: translateX(-165%);
+    margin-top: 10px;
+    color: white;
+    font-family: serif;
+  
+  }
+  
+  .urbanlogo_footer {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  
+  .textbox-wrapper {
+  background-color: #EADDCA;
+  /* margin-bottom: 20px; */
+  overflow: hidden;
+  /* margin-left: 20px; */
+  /* margin-right: 20px; */
+  }
+  
+  .textbox-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  }
+  
+  .text {
+  flex: 1;
+  }
+  
+  .button-container {
+  display: flex;
+  /* justify-content: flex-end; /* Align the button to the right */ 
+  margin-top: 10px; /* Add margin to the top if needed */
+  }
+  
+  .book-button {
+  margin-left: 20px; /* Adjust the margin to the left to shift the button */
+  }
+  
+  .picture {
+  flex: 1;
+  margin-left: 50px;
+  display: flex;
+  justify-content: center;
+  }
+  
+  .picture img {
+  width: 50%; /* or any desired width */
+  height: auto;
+  object-fit: contain;
+  }
+  
+  .text h3 {
+  margin-top: 0;
+  }
+  
+  .urbanlogo_footer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .book-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: black;
+  border: 2px solid black;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .book-button:hover {
+  background-color: black;
+  color: white;
+  }
+  
+  .tag-button {
+  margin-top: 10px; /* Add margin to create space between the list and the button */
+  }
+  
+  .rounded-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: transparent;
+  border: 2px solid #EADDCA;
+  color: #EADDCA;
+  text-decoration: none;
+  }
+  
+  .rounded-button:hover {
+  background-color: #C6BBAA;
+  }
+  .footer-logo:hover{
+    margin-bottom: 10px;
+  }

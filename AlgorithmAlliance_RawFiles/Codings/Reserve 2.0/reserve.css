@@ -1,0 +1,595 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+body{
+  padding-top: 20%;
+}
+
+.header.scrolled .nav-bar {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  height: 110px;
+  z-index: 10000;
+  padding-top: 1%;
+  color: rgb(0, 0, 0);
+
+}
+
+.nav-bar {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  height: 110px;
+
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 9999;
+      padding-top: 1%;
+    }
+
+.header.scrolled .nav-bar a {
+  color: black; /* Set the text color to black */
+}
+
+/* Rest of your CSS styles */
+
+/* Media query for smaller screens */
+@media screen and (max-width: 500px) {
+ 
+}
+
+.menu a {
+    color: rgb(0, 0, 0);
+    transition: ease .40s;
+}
+#list:hover {
+  border-bottom: 2px solid #F4F1ED;
+  padding-bottom: 10px;
+  transition: ease .40s;
+}
+
+
+
+.logo {
+    background-image: url(urban_oasis_resort_transparent.png);
+}
+
+
+.nav-bar {
+    flex-grow: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 20px 100px;
+    width: 100%;
+    align-items: center;
+    /* margin-left: 20px; */
+    font-size: 20px;
+    color: black;
+    
+}
+
+.menu li {
+    margin: 0 10px;
+    color: black;
+  
+}
+
+.menu li a {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-decoration: none;
+    color: black;
+}
+
+.logo-item {
+    display: flex;
+    align-items: center;
+    /* padding-top: 20px; */
+}
+
+.logo-item img{
+    width: 80px;
+}
+
+/* .header {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    background-image: url(reserve_pic.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    scroll-behavior: smooth;
+  }  */
+  
+  .title_p{
+      font-family: Serif;
+      color: white;
+      font-size: 60px; 
+      text-align: center;
+      position: absolute;
+      top: 60%; 
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+      z-index: 1;
+  }
+  
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F4F1ED;
+    margin: 0;
+}
+
+.reminder-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  width: 91.5%;
+  margin-top: 10%;
+  margin-left: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reminder {
+  color: #777;
+  font-size: 16px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 20px;
+  width: 93%; /* Adjust the width as needed */
+  margin-left: 2.4%; /* Adjust the margin-left as needed */
+}
+
+.calendar-container {
+  margin-top: 10px;
+  flex: 1;
+  position: relative;
+  width: 100%;
+}
+
+.calendar {
+  border: 1px solid #ccc;
+  padding: 20px;
+  font-size: 20px;
+  background-color: #f9f9f9;
+  width: 93%; /* Adjust the width as needed */
+  height: 800px;
+}
+
+.month-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.month-nav button {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #777;
+}
+
+.weekdays {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.weekday {
+  flex: 1;
+  text-align: center;
+}
+
+.days {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.days .day {
+  flex-basis: calc(100% / 7);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.selected-days {
+  margin-bottom: 10px;
+}
+
+#stay-info {
+  margin-bottom: 10px;
+}
+
+.reserved-event {
+  background-color: #f44336;
+  color: #ffffff;
+}
+
+.reservation-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Adjust the width as needed */
+  margin-top: 1%;
+  margin-right: -20px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.reservation-form {
+  border: 1px solid #ccc;
+  padding-top: 20px; /* Adjust the padding as needed */
+  padding-bottom: 20px; /* Adjust the padding as needed */
+  padding-left: 20px; /* Adjust the padding as needed */
+  padding-right: 40px; /* Adjust the padding as needed */
+  border-radius: 5px;
+  width: 100%; /* Adjust the width as needed */
+  background-color: #f9f9f9;
+}
+
+.reservation-form button {
+  padding: 10px 20px; /* Adjust the padding as needed */
+}
+
+.reservation-form h2 {
+  text-align: center;
+  margin-bottom: 20px; /* Adjust the margin-bottom as needed */
+  color: #555;
+}
+
+.reservation-container hr {
+  width: 104%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+h3.optional {
+  text-align: center;
+  margin-bottom: 20px; /* Adjust the margin-bottom as needed */
+  color: #555;
+}
+.form-row {
+  margin-bottom: 20px;
+}
+
+.form-row label {
+  display: block;
+  margin-bottom: 5px;
+  color: #777;
+  font-weight: 600;
+}
+
+.form-row select,
+.form-row input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-row input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+.form-row.custom-buttons {
+  display: flex;
+  justify-content: center;
+  margin-left: 48%; /* Adjust the margin-left value as needed */
+}
+
+.form-row.custom-buttons button {
+  width: calc(44% - 15px);
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  padding-right: 20px;
+}
+
+.form-row.custom-buttons button:first-child {
+  margin-right: 10px; /* Adjust the margin-right value as needed */
+}
+
+.form-row.custom-buttons button#clear-btn {
+  background-color: #f44336;
+}
+
+.form-row.custom-buttons button#clear-btn:hover {
+  background-color: #ce362b;
+}
+
+.form-row.custom-buttons button:hover {
+  background-color: #45a049;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -250px;
+  margin-right: 50%;
+  width: 100%;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.legend-color.available {
+  background-color: #4CAF50;
+}
+
+.legend-color.reserved {
+  background-color: #f44336;
+}
+
+.legend-text {
+  color: #777;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .calendar-container {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .calendar {
+    font-size: 18px;
+  }
+
+  .reservation-container {
+    align-items: stretch;
+    width: 100%;
+  }
+}
+
+/*Payment*/
+body {
+  background-color: #f1f1f1;
+  font-family: serif;
+}
+
+.container_box {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 11%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.box {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin-top: -20px;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+p {
+  color: #777;
+  margin-bottom: 20px;
+}
+
+img {
+  width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+#btn {
+  width: 395px; /* Adjust the width as desired */
+  background-color: #6eb2a7; /* Change the background color */
+  color: white; /* Change the text color */
+  margin-top: 20px;
+  font-family: serif;
+}
+
+#btn:hover {
+  background-color: #4e938a;
+}
+
+button {
+  background-color: #6eb2a7;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: serif;
+}
+
+.back-btn {
+  background-color: #6eb2a7;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px; /* Add margin to create spacing between the buttons */
+  border-radius: 5px;
+  font-family: serif;
+}
+
+button:hover {
+  background-color: #4e938a;
+}
+
+.back-btn:hover {
+  background-color: #4e938a; /* Change the background color on hover */
+}
+
+/*Receipt*/
+.container-receipt {
+  background-color: #f7f7f7;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 50%;
+}
+
+.container-receipt h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.reservation-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.receipt-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.receipt-content .table-container {
+  flex-basis: 48%;
+  margin-bottom: 20px;
+}
+
+.receipt-content .table-container label {
+  font-weight: bold;
+  text-align: left;
+}
+
+.receipt-content .table-container .value {
+  margin-top: 8px;
+}
+
+#others-row,
+#visit-time,
+#visit-adults-row,
+#visit-children-row {
+  margin-top: 20px;
+}
+
+.receipt-content .table-container div {
+  margin-bottom: 12px;
+}
+
+.receipt-content .table-container:last-child {
+  flex-basis: 100%;
+}
+
+#receipt-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
+}
+
+#receipt-form div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+#receipt-form div label {
+  text-align: left;
+  padding-right: 10px;
+}
+
+#receipt-form div .value {
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #6eb2a7;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #4e938a;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button-container button,
+.button-container a {
+  margin: 0 10px;
+}
